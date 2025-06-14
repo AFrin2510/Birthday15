@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Azar 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #0a0f2c, #000);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 40px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff4da6; }
+      to { text-shadow: 0 0 20px #00e7ff, 0 0 30px #00e7ff; }
+    }
+
+    .heart-star {
+      font-size: 1.5em;
+      animation: twinkle 1.5s infinite alternate;
+      margin-left: 10px;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 700px;
+      margin: 30px auto;
+      box-shadow: 0 0 15px #00eaff;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.8;
+      margin: 10px 0;
+    }
+
+    .stars {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: twinkle 1.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+
+    /* Slideshow */
+    .slideshow {
+      width: 90%;
+      max-width: 700px;
+      margin: 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #00eaff;
+    }
+
+    .slides {
+      display: flex;
+      animation: slide 6s infinite;
+      width: 200%;
+    }
+
+    .slides img {
+      width: 100vw;
+      height: 60vh;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%, 50% { transform: translateX(0%); }
+      55%, 100% { transform: translateX(-100%); }
+    }
+
+    /* Reveal message */
+    .reveal-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #00e7ff;
+      color: #000;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00e7ff;
+    }
+
+    .hidden-message {
+      margin-top: 20px;
+      display: none;
+      font-size: 1.3em;
+      color: #ff79c6;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>
+    Happy Birthday Azar <span class="heart-star">✨❤️</span>
+  </h1>
+
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="thozhiya.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <!-- Slideshow -->
+  <div class="slideshow">
+    <div class="slides">
+      <img src="az.jpg" alt="Azar Pic 1">
+      <img src="az.jpg" alt="Azar Pic 2">
+    </div>
+  </div>
+
+  <!-- Message -->
+  <div class="message-box">
+    <p>Dear Azar❤️✨,</p>
+    <p>
+      Today is not just your birthday, it's a celebration of someone who makes this world brighter — and my life more meaningful.
+    </p>
+    <p>
+      From casual talks to deep conversations, crazy laughs to silent comfort... every moment with you is unforgettable.
+    </p>
+    <p>
+      You're someone I trust, admire, and truly care about. Even though we fight or tease each other sometimes, deep down, you know how important you are to me.
+    </p>
+    <p>
+      On this special day, I wish you all the happiness your heart can hold. May your path always shine with success, love, peace — and a little magic too.
+    </p>
+    <p>
+      Happy Birthday once again, Azar! 🎂🎉<br>
+      Always here for you, no matter what.
+    </p>
+    <p><b>– With lots of good wishes,By your bestest Afrin 💙✨</b></p>
+  </div>
+
+  <!-- Click to Reveal -->
+  <button class="reveal-btn" onclick="document.getElementById('secret').style.display='block'">Click here for a surprise 💌</button>
+  <div class="hidden-message" id="secret">
+    I am so lucky to have you!!!! You are a truly rare soul, Azar. I'm so grateful to have you in my life. ❤️✨  
+    Nobody can replace your place in my life and my heart ❤️✨...
+    Stay amazing, and never forget how special you are.
+    Once again I wish you a very happiest birthday 🎉❤️✨
+  </div>
+
+  <script>
+    // Stars animation
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('stars');
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>
