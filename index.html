@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday Azar 🎉</title>
   <style>
     body {
@@ -10,12 +11,12 @@
       background: radial-gradient(circle at top, #0a0f2c, #000);
       color: white;
       font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
+      overflow-x: hidden;
       text-align: center;
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       margin-top: 40px;
       animation: glow 2s infinite alternate;
     }
@@ -33,36 +34,24 @@
 
     .message-box {
       background: rgba(255, 255, 255, 0.1);
-      padding: 30px;
+      padding: 20px;
       border-radius: 20px;
+      width: 90%;
       max-width: 700px;
       margin: 30px auto;
       box-shadow: 0 0 15px #00eaff;
     }
 
     p {
-      font-size: 1.3em;
+      font-size: 1.1em;
       line-height: 1.8;
       margin: 10px 0;
     }
 
-    .stars {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      animation: twinkle 1.5s infinite alternate ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0% { opacity: 0.2; }
-      100% { opacity: 1; }
-    }
-
-    /* Slideshow */
     .slideshow {
       width: 90%;
-      max-width: 700px;
+      max-width: 600px;
+      height: 300px;
       margin: 20px auto;
       border-radius: 15px;
       overflow: hidden;
@@ -73,12 +62,14 @@
       display: flex;
       animation: slide 6s infinite;
       width: 200%;
+      height: 100%;
     }
 
     .slides img {
-      width: 100vw;
-      height: 60vh;
-      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: #000;
     }
 
     @keyframes slide {
@@ -86,7 +77,6 @@
       55%, 100% { transform: translateX(-100%); }
     }
 
-    /* Reveal message */
     .reveal-btn {
       margin-top: 20px;
       padding: 10px 20px;
@@ -102,7 +92,7 @@
     .hidden-message {
       margin-top: 20px;
       display: none;
-      font-size: 1.3em;
+      font-size: 1.2em;
       color: #ff79c6;
       animation: fadeIn 2s ease forwards;
     }
@@ -111,46 +101,80 @@
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
+
+    /* Balloons with fancy ropes */
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 60px;
+      background: #ff79c6;
+      border-radius: 50%;
+      animation: float 6s linear infinite;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      width: 2px;
+      height: 30px;
+      background: linear-gradient(white, rgba(255,255,255,0.5));
+      transform: translateX(-50%) rotateZ(5deg);
+      border-radius: 50%;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-120vh); }
+    }
+
+    /* Stars */
+    .stars {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: twinkle 1.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
   </style>
 </head>
 <body>
 
-  <h1>
-    Happy Birthday Azar <span class="heart-star">✨❤️</span>
-  </h1>
+  <h1>Happy Birthday Azar <span class="heart-star">✨❤️</span></h1>
 
   <!-- Slideshow -->
   <div class="slideshow">
     <div class="slides">
-      <img src="az.jpg" alt="Azar Pic 1">
-      <img src="az.jpg" alt="Azar Pic 2">
+      <img src="we.jpg" alt="Azar Pic 1">
+      <img src="we.jpg" alt="Azar Pic 2">
     </div>
   </div>
+
+  <!-- Balloons -->
+  <div id="balloon-container"></div>
 
   <!-- Message -->
   <div class="message-box">
     <p>Dear Azar❤️✨,</p>
-    <p>
-      Today is not just your birthday, it's a celebration of someone who makes this world brighter — and my life more meaningful.
-    </p>
-    <p>
-      From casual talks to deep conversations, crazy laughs to silent comfort... every moment with you is unforgettable.
-    </p>
-    <p>
-      You're someone I trust, admire, and truly care about. Even though we fight or tease each other sometimes, deep down, you know how important you are to me.
-    </p>
-    <p>
-      On this special day, I wish you all the happiness your heart can hold. May your path always shine with success, love, peace — and a little magic too.
-    </p>
-    <p>
-      Happy Birthday once again, Azar! 🎂🎉<br>
-      Always here for you, no matter what.
-    </p>
-    <p><b>– With lots of good wishes,By your bestest Afrin 💙✨</b></p>
+    <p>Today is not just your birthday, it's a celebration of someone who makes this world brighter — and my life more meaningful.</p>
+    <p>From casual talks to deep conversations, crazy laughs to silent comfort... every moment with you is unforgettable.</p>
+    <p>You're someone I trust, admire, and truly care about. Even though we fight or tease each other sometimes, deep down, you know how important you are to me.</p>
+    <p>On this special day, I wish you all the happiness your heart can hold. May your path always shine with success, love, peace — and a little magic too.</p>
+    <p>Happy Birthday once again, Azar! 🎂🎉<br>Always here for you, no matter what.</p>
+    <p><b>– With lots of good wishes, By your bestest Afrin 💙✨</b></p>
   </div>
 
   <!-- Click to Reveal -->
-  <button class="reveal-btn" onclick="document.getElementById('secret').style.display='block'">Click here for a surprise 💌</button>
+  <button class="reveal-btn" onclick="revealSurprise()">Click here for a surprise 💌</button>
   <div class="hidden-message" id="secret">
     I am so lucky to have you!!!! You are a truly rare soul, Azar. I'm so grateful to have you in my life. ❤️✨  
     Nobody can replace your place in my life and my heart ❤️✨...
@@ -158,8 +182,9 @@
     Once again I wish you a very happiest birthday 🎉❤️✨
   </div>
 
+  <!-- JS Scripts -->
   <script>
-    // Stars animation
+    // Star background
     for (let i = 0; i < 100; i++) {
       const star = document.createElement('div');
       star.classList.add('stars');
@@ -167,6 +192,29 @@
       star.style.left = `${Math.random() * 100}vw`;
       star.style.animationDuration = `${1 + Math.random() * 2}s`;
       document.body.appendChild(star);
+    }
+
+    // Balloon pop and surprise
+    function revealSurprise() {
+      const container = document.getElementById('balloon-container');
+      container.innerHTML = ''; // Clear balloons
+      document.getElementById('secret').style.display = 'block';
+    }
+
+    // Add balloons
+    const balloonColors = ['#ff79c6', '#ffb86c', '#8be9fd', '#bd93f9', '#50fa7b'];
+    for (let i = 0; i < 10; i++) {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = `${Math.random() * 90}vw`;
+      balloon.style.background = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+      balloon.style.animationDuration = `${4 + Math.random() * 3}s`;
+      balloon.onclick = () => {
+        balloon.style.transition = 'transform 0.3s ease';
+        balloon.style.transform = 'scale(0)';
+        setTimeout(() => balloon.remove(), 300);
+      };
+      document.getElementById('balloon-container').appendChild(balloon);
     }
   </script>
 </body>
